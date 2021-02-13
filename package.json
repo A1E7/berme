@@ -1,0 +1,18 @@
+{
+  "name": "berme",
+  "version": "0.0.1",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "dev": "electron ."
+  },
+  "keywords": [],
+  "author": "A1E7",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^11.2.2"
+  },
+  "dependencies": {
+    "vue": "^3.0.5"
+  }
+}

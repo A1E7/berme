@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>berme</title>
+    <script src="../../node_modules/vue/dist/vue.global.js"></script>
+    <link rel="stylesheet" href="../stylesheets/common.css" />
+    <link rel="stylesheet" href="../stylesheets/index.css" />
+  </head>
+  <body>
+    <div id="app">
+      <div id="berm-box">
+        <div class="berm" v-for="(scene,index) in scenes" :key="index">
+          <img class="poster" @click="clicks.berm_left(scene)" @contextmenu.prevent="clicks.berm_right($event,scene,index)" :src="scene.posters[0]" />
+          <h3 class="meta scene-name tag handy">{{scene.scene}}</h3>
+          <div class="meta info-tags">
+            <span class="tag orientation handy" :cont="scene.orientation" @click="clicks.orientation_filter(scene.orientation)"> {{ scene.orientation }} </span>
+            <span class="tag roughness handy" :cont="scene.roughness" @click="clicks.roughness_filter(scene.roughness)"> {{ scene.roughness }} </span>
+          </div>
+          <div class="meta all-tags">
+            <div class="model" v-for="(model,index) in scene.models" :key="index">
+              <span class="tag model-name handy" @click="clicks.model_filter(model.name)">{{model.tob}} {{ model.name }}</span>
+              <span class="tag model-body handy" @click="clicks.body_filter(model.body)">{{ model.body }}</span>
+              <span class="tag model-tag handy" v-for="(tag,index) in model.tags" :key="index" @click="clicks.model_tag_filter(tag)">{{ tag }}</span>
+            </div>
+            <div class="scene">
+              <span class="scene-tag tag handy" v-for="(tag,index) in scene.tags" :key="index" @click="clicks.scene_tag_filter(tag)">{{ tag }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="berm-view">
+        <video id="bp1" v-if="active1.type==='video'" :src="active1.video" type="video/mp4" :poster="active1.posters[0]" controls autoplay></video>
+        <img id="bp1" v-if="active1.type==='manga'" :src="active1.manga[0]" />
+
+        <video id="bp2" v-if="active2.type==='video'" :src="active2.video" type="video/mp4" :poster="active2.posters[0]" controls autoplay></video>
+        <img id="bp2" v-if="active2.type==='manga'" :src="active2.manga[0]" />
+      </div>
+      <div id="lb-btns">
+        <button class="random" @click="random" v-text="'R'" />
+      </div>
+    </div>
+    <script src="./index.js"></script>
+  </body>
+</html>

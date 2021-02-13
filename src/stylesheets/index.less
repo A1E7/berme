@@ -1,0 +1,154 @@
+#app {
+  display: flex;
+  flex-wrap: nowrap;
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  #lb-btns {
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+    .random {
+      &:focus {
+        outline: none;
+      }
+      cursor: pointer;
+      font-size: 1rem;
+      background-color: royalblue;
+      border: none;
+      box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+      @rad: 50px;
+      width: @rad;
+      height: @rad;
+      border-radius: @rad;
+    }
+  }
+}
+
+#app #berm-box {
+  width: 50vw;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-wrap: wrap;
+  overflow-y: scroll;
+  align-content: flex-start;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  .berm {
+    margin: 0px 0px;
+    @the_height: calc(50vw / 4);
+    padding: 0px;
+    transition: padding 0.3s ease-in-out;
+    &:hover {
+      padding: 8px;
+    }
+    width: @the_height;
+    height: @the_height;
+    position: relative;
+    .poster {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      &:hover {
+        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+      }
+    }
+    .tag {
+      border-radius: 4px;
+      font-size: 0.75rem;
+      padding: 2px 4px;
+    }
+    .meta {
+      opacity: 0.8;
+      transition: opacity 0.1s ease-in;
+      &:hover {
+        opacity: 1;
+      }
+      position: absolute;
+      z-index: 1;
+      &.scene-name {
+        left: 10px;
+        top: 10px;
+        background-color: white;
+        color: black;
+      }
+      &.info-tags {
+        right: 10px;
+        top: 10px;
+        .orientation {
+          &[cont="同性恋"] {
+            background-color: purple;
+          }
+          &[cont="异性恋"] {
+            background-color: blue;
+          }
+          &[cont="变性人"] {
+            background-color: #cccccc;
+          }
+          &[cont="打飞机"] {
+            background-color: #cc0033;
+          }
+          margin-right: 8px;
+        }
+        .roughness {
+          &[cont="暴力"] {
+            background-color: red;
+          }
+          &[cont="澎湃"] {
+            background-color: orangered;
+          }
+          &[cont="常规"] {
+            background-color: #cccccc;
+          }
+          &[cont="温柔"] {
+            background-color: #cc0033;
+          }
+        }
+      }
+      &.all-tags {
+        left: 10px;
+        bottom: 10px;
+        .model,
+        .scene {
+          display: inline;
+        }
+        .tag {
+          display: inline-block;
+          margin-right: 4px;
+          margin-bottom: 2px;
+          color: black;
+        }
+        .model-name {
+          background-color: #131419;
+          color: white;
+        }
+        .model-body {
+          background-color: #c28c6b;
+        }
+        .model-tag {
+          background-color: #a3a8c5;
+        }
+        .scene-tag {
+          background-color: #669933;
+        }
+      }
+    }
+  }
+}
+
+#app #berm-view {
+  width: 50vw;
+  background-color: black;
+  display: flex;
+  flex-wrap: wrap;
+  video,
+  img {
+    width: 50vw;
+    height: 50vh;
+    object-fit: contain;
+    &:focus {
+      outline: none;
+    }
+  }
+}

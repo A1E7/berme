@@ -1,0 +1,149 @@
+#app {
+  display: flex;
+  flex-wrap: nowrap;
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+#app #lb-btns {
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+}
+#app #lb-btns .random {
+  cursor: pointer;
+  font-size: 1rem;
+  background-color: royalblue;
+  border: none;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+}
+#app #lb-btns .random:focus {
+  outline: none;
+}
+#app #berm-box {
+  width: 50vw;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-wrap: wrap;
+  overflow-y: scroll;
+  align-content: flex-start;
+}
+#app #berm-box::-webkit-scrollbar {
+  display: none;
+}
+#app #berm-box .berm {
+  margin: 0px 0px;
+  padding: 0px;
+  transition: padding 0.3s ease-in-out;
+  width: calc(50vw / 4);
+  height: calc(50vw / 4);
+  position: relative;
+}
+#app #berm-box .berm:hover {
+  padding: 8px;
+}
+#app #berm-box .berm .poster {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+#app #berm-box .berm .poster:hover {
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+}
+#app #berm-box .berm .tag {
+  border-radius: 4px;
+  font-size: 0.75rem;
+  padding: 2px 4px;
+}
+#app #berm-box .berm .meta {
+  opacity: 0.8;
+  transition: opacity 0.1s ease-in;
+  position: absolute;
+  z-index: 1;
+}
+#app #berm-box .berm .meta:hover {
+  opacity: 1;
+}
+#app #berm-box .berm .meta.scene-name {
+  left: 10px;
+  top: 10px;
+  background-color: white;
+  color: black;
+}
+#app #berm-box .berm .meta.info-tags {
+  right: 10px;
+  top: 10px;
+}
+#app #berm-box .berm .meta.info-tags .orientation {
+  margin-right: 8px;
+}
+#app #berm-box .berm .meta.info-tags .orientation[cont="同性恋"] {
+  background-color: purple;
+}
+#app #berm-box .berm .meta.info-tags .orientation[cont="异性恋"] {
+  background-color: blue;
+}
+#app #berm-box .berm .meta.info-tags .orientation[cont="变性人"] {
+  background-color: #cccccc;
+}
+#app #berm-box .berm .meta.info-tags .orientation[cont="打飞机"] {
+  background-color: #cc0033;
+}
+#app #berm-box .berm .meta.info-tags .roughness[cont="暴力"] {
+  background-color: red;
+}
+#app #berm-box .berm .meta.info-tags .roughness[cont="澎湃"] {
+  background-color: orangered;
+}
+#app #berm-box .berm .meta.info-tags .roughness[cont="常规"] {
+  background-color: #cccccc;
+}
+#app #berm-box .berm .meta.info-tags .roughness[cont="温柔"] {
+  background-color: #cc0033;
+}
+#app #berm-box .berm .meta.all-tags {
+  left: 10px;
+  bottom: 10px;
+}
+#app #berm-box .berm .meta.all-tags .model,
+#app #berm-box .berm .meta.all-tags .scene {
+  display: inline;
+}
+#app #berm-box .berm .meta.all-tags .tag {
+  display: inline-block;
+  margin-right: 4px;
+  margin-bottom: 2px;
+  color: black;
+}
+#app #berm-box .berm .meta.all-tags .model-name {
+  background-color: #131419;
+  color: white;
+}
+#app #berm-box .berm .meta.all-tags .model-body {
+  background-color: #c28c6b;
+}
+#app #berm-box .berm .meta.all-tags .model-tag {
+  background-color: #a3a8c5;
+}
+#app #berm-box .berm .meta.all-tags .scene-tag {
+  background-color: #669933;
+}
+#app #berm-view {
+  width: 50vw;
+  background-color: black;
+  display: flex;
+  flex-wrap: wrap;
+}
+#app #berm-view video,
+#app #berm-view img {
+  width: 50vw;
+  height: 50vh;
+  object-fit: contain;
+}
+#app #berm-view video:focus,
+#app #berm-view img:focus {
+  outline: none;
+}
